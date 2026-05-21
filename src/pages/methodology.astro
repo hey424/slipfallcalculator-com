@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Calculator Methodology | slipfallcalculator.com';
+const description = 'How we calculate slip and fall settlement estimates — multiplier method, liability adjustments, and data sources.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Calculator Methodology</h1>
+
+  <h2>Economic Damages</h2>
+  <p>We sum four inputs: past medical bills, estimated future medical costs, lost wages to date, and future lost earning capacity. These represent your "special damages" — out-of-pocket losses that are documentable.</p>
+
+  <h2>Pain &amp; Suffering — Multiplier Method</h2>
+  <p>We apply a multiplier to total economic damages to estimate non-economic (pain and suffering) damages. Multiplier ranges by severity:</p>
+  <ul>
+    <li>Minor (full recovery): 1.5×–2.0×</li>
+    <li>Moderate (partial recovery): 2.0×–3.0×</li>
+    <li>Serious (surgery/extended recovery): 3.0×–4.0×</li>
+    <li>Severe (permanent impairment): 4.0×–5.0×</li>
+  </ul>
+  <p>These ranges are derived from published jury verdict databases and settlement studies. Insurance adjusters frequently use a similar approach internally.</p>
+
+  <h2>Liability Adjustment</h2>
+  <p>We apply a reduction factor based on liability strength: clear liability (no reduction), shared fault (30% reduction), disputed liability (50% reduction). This reflects the practical discount applied in settlement negotiations when fault is contested.</p>
+
+  <h2>Limitations</h2>
+  <p>This calculator does not account for: state-specific damages caps, insurance policy limits, attorney fees (typically 33%–40% of recovery), or case-specific factors like defendant wealth or egregious conduct.</p>
+</BaseLayout>
