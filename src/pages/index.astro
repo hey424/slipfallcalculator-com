@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+const title = 'Slip & Fall Settlement Calculator | slipfallcalculator.com';
+const description = 'Estimate your slip and fall settlement value. Enter your medical bills, lost wages, and injury severity to see a data-driven range.';
+---
+<BaseLayout title={title} description={description}>
+  <h1>Slip &amp; Fall Settlement Calculator</h1>
+  <p>Estimate your potential settlement based on medical costs, lost income, and injury severity. Results are educational estimates — consult a personal injury attorney for your specific case.</p>
+  <form id="calc">
+    <label for="medical">Total Medical Bills ($)</label>
+    <input type="number" id="medical" min="0" value="10000" required />
+
+    <label for="future_medical">Estimated Future Medical Costs ($)</label>
+    <input type="number" id="future_medical" min="0" value="0" />
+
+    <label for="lost_wages">Lost Wages to Date ($)</label>
+    <input type="number" id="lost_wages" min="0" value="5000" />
+
+    <label for="future_wages">Future Lost Earning Capacity ($)</label>
+    <input type="number" id="future_wages" min="0" value="0" />
+
+    <label for="severity">Injury Severity</label>
+    <select id="severity">
+      <option value="minor">Minor (sprains, bruises — full recovery)</option>
+      <option value="moderate" selected>Moderate (fractures, soft tissue — partial recovery)</option>
+      <option value="serious">Serious (surgery required, extended recovery)</option>
+      <option value="severe">Severe (permanent impairment or disability)</option>
+    </select>
+
+    <label for="liability">Liability Clarity</label>
+    <select id="liability">
+      <option value="clear" selected>Clear (wet floor, no warning sign)</option>
+      <option value="shared">Shared (some fault on both sides)</option>
+      <option value="disputed">Disputed (unclear notice or causation)</option>
+    </select>
+
+    <button type="submit">Calculate Settlement Range</button>
+  </form>
+  <div id="result"></div>
+
+  <h2>How Slip &amp; Fall Settlements Are Calculated</h2>
+  <p>Slip and fall settlements compensate for economic damages (medical bills, lost wages) and non-economic damages (pain and suffering). Pain and suffering is typically calculated using a <strong>multiplier method</strong> — applying a factor of 1.5× to 5× your economic damages depending on injury severity.</p>
+  <ul>
+    <li><strong>Minor injuries:</strong> 1.5×–2× multiplier</li>
+    <li><strong>Moderate injuries:</strong> 2×–3× multiplier</li>
+    <li><strong>Serious injuries:</strong> 3×–4× multiplier</li>
+    <li><strong>Severe/permanent injuries:</strong> 4×–5× multiplier</li>
+  </ul>
+  <p>Liability disputes reduce the settlement. In comparative fault states, your recovery is reduced by your percentage of fault.</p>
+
+  <script>
+    document.getElementById('calc').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const medical = parseFloat(document.getElementById('medical').value) || 0;
+      const futureMed = parseFloat(document.getElementById('future_medical').value) || 0;
+      const wages = parseFloat(document.getElementById('lost_wages').value) || 0;
+      const futureWages = parseFloat(document.getElementById('future_wages').value) || 0;
+      const severity = document.getElementById('severity').value;
+      const liability = document.getElementById('liability').value;
+
+      const econ = medical + futureMed + wages + futureWages;
+
+      const multipliers = {
+        minor: [1.5, 2.0],
+        moderate: [2.0, 3.0],
+        serious: [3.0, 4.0],
+        severe: [4.0, 5.0]
+      };
+      const [loMult, hiMult] = multipliers[severity];
+
+      const liabilityAdj = { clear: 1.0, shared: 0.70, disputed: 0.50 };
+      const adj = liabilityAdj[liability];
+
+      const low = Math.round(econ * loMult * adj);
+      const high = Math.round(econ * hiMult * adj);
+
+      const fmt = n => '$' + n.toLocaleString();
+      document.getElementById('result').innerHTML =
+        '<strong>Estimated Settlement Range: ' + fmt(low) + ' – ' + fmt(high) + '</strong>' +
+        '<br>Economic damages: ' + fmt(econ) +
+        '<br>Pain & suffering multiplier: ' + loMult + '×–' + hiMult + '×' +
+        '<br>Liability adjustment: ' + Math.round(adj * 100) + '%' +
+        '<br><em>This is an educational estimate. Actual settlements vary significantly based on jurisdiction, insurance limits, and case-specific facts.</em>';
+    });
+  </script>
+</BaseLayout>
