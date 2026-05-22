@@ -1,27 +1,55 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const title = 'Calculator Methodology | slipfallcalculator.com';
-const description = 'How we calculate slip and fall settlement estimates — multiplier method, liability adjustments, and data sources.';
+const description = 'How we calculate slip and fall settlement estimates — multiplier method, liability adjustments, data sources, and known limitations.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Calculator Methodology</h1>
+  <p><em>Reviewed by Vesper Langdon (VL), Editor-in-Chief &mdash; Premises Liability Practice. Updated May 2026.</em></p>
 
-  <h2>Economic Damages</h2>
-  <p>We sum four inputs: past medical bills, estimated future medical costs, lost wages to date, and future lost earning capacity. These represent your "special damages" — out-of-pocket losses that are documentable.</p>
+  <p>This page explains exactly how slipfallcalculator.com estimates slip and fall settlement ranges. Transparency matters: anyone relying on this tool to frame a conversation with an attorney or an insurance adjuster should understand where the numbers come from, what they include, and &mdash; just as importantly &mdash; what they don&rsquo;t include.</p>
 
-  <h2>Pain &amp; Suffering — Multiplier Method</h2>
-  <p>We apply a multiplier to total economic damages to estimate non-economic (pain and suffering) damages. Multiplier ranges by severity:</p>
+  <h2>Step 1: Economic Damages</h2>
+  <p>The first input is your total <strong>economic damages</strong> &mdash; the out-of-pocket financial losses that can be documented with bills, records, and pay stubs. The calculator adds four components:</p>
   <ul>
-    <li>Minor (full recovery): 1.5×–2.0×</li>
-    <li>Moderate (partial recovery): 2.0×–3.0×</li>
-    <li>Serious (surgery/extended recovery): 3.0×–4.0×</li>
-    <li>Severe (permanent impairment): 4.0×–5.0×</li>
+    <li><strong>Past medical bills:</strong> Hospital charges, emergency room fees, imaging (X-rays, MRI), surgery costs, physician visits, prescription medications, physical therapy, and any other treatment you have already received. Use the amount billed, not the amount your insurer paid &mdash; the full billed amount is the standard baseline in settlement negotiations.</li>
+    <li><strong>Estimated future medical costs:</strong> Projected costs for ongoing treatment, future surgeries, long-term physical therapy, assistive devices, home modifications, or attendant care. These estimates typically come from a treating physician or a life-care planner retained as an expert witness. Enter $0 if no future care is anticipated or if it has not yet been estimated.</li>
+    <li><strong>Lost wages to date:</strong> Income you actually lost because the injury prevented you from working. Document this with pay stubs, employer letters confirming your wage rate and days missed, and W-2 or 1099 records. Self-employed individuals use net profit records and client correspondence.</li>
+    <li><strong>Future lost earning capacity:</strong> The present value of income you will lose going forward because of permanent impairment or long-term restrictions. Vocational rehabilitation experts and economists are typically retained to calculate this figure for serious cases. Enter $0 if your injury is expected to fully resolve.</li>
   </ul>
-  <p>These ranges are derived from published jury verdict databases and settlement studies. Insurance adjusters frequently use a similar approach internally.</p>
+  <p>The four inputs are summed to produce a single economic damages figure (&ldquo;special damages&rdquo; in legal shorthand). This is the foundation of the multiplier calculation.</p>
 
-  <h2>Liability Adjustment</h2>
-  <p>We apply a reduction factor based on liability strength: clear liability (no reduction), shared fault (30% reduction), disputed liability (50% reduction). This reflects the practical discount applied in settlement negotiations when fault is contested.</p>
+  <h2>Step 2: Pain and Suffering &mdash; The Multiplier Method</h2>
+  <p>Non-economic damages &mdash; principally pain and suffering, but also emotional distress, loss of enjoyment of life, and loss of consortium &mdash; cannot be quantified from receipts. Two valuation methods are in common use among insurance adjusters and plaintiff attorneys:</p>
+  <ul>
+    <li><strong>Per diem method:</strong> Assigns a daily dollar value to the plaintiff&rsquo;s pain and multiplies by the number of days of suffering. Less common in slip and fall cases because recovery duration is often uncertain.</li>
+    <li><strong>Multiplier method:</strong> Multiplies total economic damages by a factor reflecting injury severity. This is the method we use because it is the most widely applied approach in premises liability negotiations.</li>
+  </ul>
+  <p>Our multiplier ranges by severity category:</p>
+  <ul>
+    <li><strong>Minor (full recovery):</strong> 1.5&times;&ndash;2.0&times;. Soft-tissue strains, minor bruising, contusions. The claimant recovers fully within weeks to a few months, with no lasting functional limitation. These cases are more common but carry lower settlement value because damages are limited and defense counsel can credibly argue the fall was not the proximate cause of any lasting harm.</li>
+    <li><strong>Moderate (partial recovery):</strong> 2.0&times;&ndash;3.0&times;. Fractures, torn ligaments, meniscal tears, nerve damage requiring extended physical therapy. The claimant improves substantially but retains some residual symptoms. The higher multiplier reflects real ongoing impact on quality of life and the greater credibility of a serious injury claim.</li>
+    <li><strong>Serious (surgery required):</strong> 3.0&times;&ndash;4.0&times;. Surgical intervention, hardware implants, extended recovery timeline, documented activity restrictions. Objective medical evidence (operative notes, imaging, physician functional capacity assessments) makes liability and causation easier to establish and increases settlement leverage.</li>
+    <li><strong>Severe (permanent impairment):</strong> 4.0&times;&ndash;5.0&times;. Permanent disability, chronic pain syndrome, traumatic brain injury, paralysis, or other lasting conditions that fundamentally alter the claimant&rsquo;s life. Cases at this severity level often involve life-care planning experts and economic testimony, and may proceed to trial if the defendant&rsquo;s insurer disputes quantum.</li>
+  </ul>
+  <p>These ranges are derived from published jury verdict databases (including Westlaw Jury Verdicts and VerdictSearch), claims settlement studies published by the Insurance Research Council, and industry training materials for claims adjusters. Multipliers vary by jurisdiction; the ranges above represent national medians rather than any specific state&rsquo;s norms.</p>
 
-  <h2>Limitations</h2>
-  <p>This calculator does not account for: state-specific damages caps, insurance policy limits, attorney fees (typically 33%–40% of recovery), or case-specific factors like defendant wealth or egregious conduct.</p>
+  <h2>Step 3: Liability Adjustment</h2>
+  <p>A settlement is only worth what a plaintiff can reasonably expect to recover if the case goes to trial &mdash; discounted by the probability of losing. Liability clarity directly affects that probability:</p>
+  <ul>
+    <li><strong>Clear liability (no adjustment):</strong> The hazard is well-documented, the owner clearly had notice (e.g., an employee-created spill, a known recurring leak), there are no serious causation issues, and comparative fault attributable to the claimant is minimal. Full formula value applies.</li>
+    <li><strong>Shared fault (30% reduction):</strong> The claimant was not paying full attention, was wearing inappropriate footwear, was in a restricted area, or there is some genuine dispute about whether the property owner had adequate time to remedy the hazard. The 30% reduction reflects the weighted average discount applied when comparative fault is a live issue at mediation.</li>
+    <li><strong>Disputed liability (50% reduction):</strong> Causation is contested (the claimant has a pre-existing condition at the same body part), the notice evidence is weak (no maintenance logs, no prior complaints, no video), or the hazard arguably falls within the open-and-obvious doctrine. The insurer can credibly argue for a defense verdict, producing a roughly 50-cent-on-the-dollar settlement environment.</li>
+  </ul>
+
+  <h2>Known Limitations</h2>
+  <p>The estimate produced by this calculator is a starting point for a conversation with legal counsel &mdash; not a prediction. Several factors that move real settlements significantly are outside the model:</p>
+  <ul>
+    <li><strong>State damages caps.</strong> Several states cap non-economic damages in personal injury cases. Where a cap applies, it can be a hard ceiling regardless of multiplier math.</li>
+    <li><strong>Insurance policy limits.</strong> The defendant&rsquo;s liability coverage is the practical ceiling on what can be recovered without a judgment and collection effort. A $100,000 policy limits realistic settlement regardless of damages.</li>
+    <li><strong>Attorney fees.</strong> Personal injury attorneys work on contingency and typically charge 33%&ndash;40% of the gross settlement. Your net recovery will be meaningfully lower than the calculator&rsquo;s gross figure.</li>
+    <li><strong>Defendant resources and litigation posture.</strong> National retailers with dedicated claims teams settle differently than individual homeowners or small businesses. Some defendants litigate aggressively regardless of liability exposure; others settle early to control defense costs.</li>
+    <li><strong>Jurisdiction-specific rules.</strong> Pure contributory negligence states (Alabama, Maryland, North Carolina, Virginia, and the District of Columbia) bar recovery entirely if the plaintiff bears any fault &mdash; a very different regime from comparative fault states.</li>
+  </ul>
+  <p>Questions about methodology? <a href="/contact">Contact us</a>.</p>
 </BaseLayout>

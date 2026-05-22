@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const title = 'Slip & Fall Settlement Calculator | slipfallcalculator.com';
-const description = 'Estimate your slip and fall settlement value. Enter your medical bills, lost wages, and injury severity to see a data-driven range.';
+const title = 'Slip & Fall Settlement Calculator | Estimate Your Premises Liability Case Value';
+const description = 'Estimate your slip and fall settlement value based on medical bills, lost wages, injury severity, and liability strength. Free educational tool with plain-language guides.';
 ---
 <BaseLayout title={title} description={description}>
   <h1>Slip &amp; Fall Settlement Calculator</h1>
-  <p>Estimate your potential settlement based on medical costs, lost income, and injury severity. Results are educational estimates — consult a personal injury attorney for your specific case.</p>
+  <p><em>Reviewed by Vesper Langdon (VL), Editor-in-Chief &mdash; Premises Liability Practice. Updated May 2026.</em></p>
+
+  <p>A slip and fall claim sits at the intersection of two legal questions: what did the property owner do wrong, and how badly were you hurt? When the answers are clear &mdash; a wet floor with no warning sign, a serious fracture, documented medical bills, and solid witness photographs &mdash; settlements can reach six figures quickly. When fault is contested or injuries are minor, recoveries are lower. This calculator estimates your potential settlement range by combining your out-of-pocket losses with a standard pain-and-suffering multiplier, then adjusting downward based on how clearly liability is established. The result is an educational data point, not a legal opinion. Use it alongside a consultation with a personal injury attorney.</p>
+
+  <h2>Run the estimate</h2>
+  <p>Enter your documented losses and choose the options that best describe your situation. The calculator applies industry-standard multipliers used by insurance adjusters and plaintiff attorneys when negotiating slip and fall settlements.</p>
+
   <form id="calc">
     <label for="medical">Total Medical Bills ($)</label>
     <input type="number" id="medical" min="0" value="10000" required />
@@ -21,8 +27,8 @@ const description = 'Estimate your slip and fall settlement value. Enter your me
 
     <label for="severity">Injury Severity</label>
     <select id="severity">
-      <option value="minor">Minor (sprains, bruises — full recovery)</option>
-      <option value="moderate" selected>Moderate (fractures, soft tissue — partial recovery)</option>
+      <option value="minor">Minor (sprains, bruises &mdash; full recovery)</option>
+      <option value="moderate" selected>Moderate (fractures, soft tissue &mdash; partial recovery)</option>
       <option value="serious">Serious (surgery required, extended recovery)</option>
       <option value="severe">Severe (permanent impairment or disability)</option>
     </select>
@@ -38,15 +44,59 @@ const description = 'Estimate your slip and fall settlement value. Enter your me
   </form>
   <div id="result"></div>
 
-  <h2>How Slip &amp; Fall Settlements Are Calculated</h2>
-  <p>Slip and fall settlements compensate for economic damages (medical bills, lost wages) and non-economic damages (pain and suffering). Pain and suffering is typically calculated using a <strong>multiplier method</strong> — applying a factor of 1.5× to 5× your economic damages depending on injury severity.</p>
+  <h2>How slip &amp; fall settlements are calculated</h2>
+  <p>Slip and fall settlements compensate for two categories of loss. <strong>Economic damages</strong> cover out-of-pocket losses that can be documented with bills, pay stubs, and receipts: past medical bills, estimated future medical costs, wages you already lost, and any reduction in future earning capacity. <strong>Non-economic damages</strong> &mdash; most often called pain and suffering &mdash; compensate for physical pain, emotional distress, reduced quality of life, and the lasting impact of your injury on daily activities.</p>
+
+  <p>Because pain and suffering can't be quantified with a receipt, insurance adjusters and attorneys typically use the <strong>multiplier method</strong>: take your total economic damages and multiply by a factor that reflects injury severity. Minor injuries that heal fully command lower multipliers; permanent impairments command higher ones.</p>
+
   <ul>
-    <li><strong>Minor injuries:</strong> 1.5×–2× multiplier</li>
-    <li><strong>Moderate injuries:</strong> 2×–3× multiplier</li>
-    <li><strong>Serious injuries:</strong> 3×–4× multiplier</li>
-    <li><strong>Severe/permanent injuries:</strong> 4×–5× multiplier</li>
+    <li><strong>Minor injuries (full recovery):</strong> 1.5&times;&ndash;2.0&times; multiplier. Soft-tissue strains, minor bruising, short treatment courses.</li>
+    <li><strong>Moderate injuries (partial recovery):</strong> 2.0&times;&ndash;3.0&times; multiplier. Fractures, torn ligaments, extended physical therapy, some lingering symptoms.</li>
+    <li><strong>Serious injuries (surgery required):</strong> 3.0&times;&ndash;4.0&times; multiplier. Surgical repair, hardware implants, significant recovery timeline, activity restrictions.</li>
+    <li><strong>Severe/permanent injuries:</strong> 4.0&times;&ndash;5.0&times; multiplier. Permanent impairment, chronic pain, disability, significant lifestyle change.</li>
   </ul>
-  <p>Liability disputes reduce the settlement. In comparative fault states, your recovery is reduced by your percentage of fault.</p>
+
+  <p>Liability disputes reduce the settlement. In comparative fault states, your recovery is reduced by your percentage of fault. A "shared fault" case might reduce the settlement by 30%; a fully disputed case might reduce it by 50% or more, since the defendant's insurer is betting on winning at trial.</p>
+
+  <h2>What your estimate means</h2>
+  <p>The range the calculator produces represents plausible pre-trial settlement territory based on standard industry formulas. It does <em>not</em> account for several factors that move real settlements significantly:</p>
+  <ul>
+    <li><strong>State damages caps.</strong> A handful of states cap non-economic damages in premises liability cases. Your state's cap can put a hard ceiling on the multiplier.</li>
+    <li><strong>Insurance policy limits.</strong> If the property owner carries only $100,000 in liability coverage, that's the practical ceiling regardless of what the formula produces.</li>
+    <li><strong>Attorney's contingency fee.</strong> Personal injury attorneys typically charge 33%&ndash;40% of the gross settlement. Your net recovery after fees will be lower than the estimate.</li>
+    <li><strong>Negotiating leverage.</strong> Strong evidence (surveillance video, prior incident reports at the same location, building-code citations) pushes settlements toward the high end of the range. Weak notice evidence pushes toward the low end or toward trial.</li>
+    <li><strong>Defendant's resources.</strong> A national retailer with deep pockets will settle cases that a small commercial landlord cannot afford to pay.</li>
+  </ul>
+
+  <h2>Factors that strengthen a slip and fall claim</h2>
+  <p>Not all slip and fall cases have the same negotiating position. These facts push value upward:</p>
+  <ul>
+    <li><strong>Surveillance video</strong> showing the hazard and the fall, especially if it shows the hazard existed for a long time before the fall.</li>
+    <li><strong>Prior incident reports</strong> at the same location &mdash; proof the owner had actual notice and did nothing.</li>
+    <li><strong>Building code or OSHA violations</strong> established by an inspector, which can trigger negligence per se doctrine.</li>
+    <li><strong>Clear liability</strong>: a spill the employee saw and walked past, a missing handrail that violated local code, ice that accumulated over days with no treatment.</li>
+    <li><strong>Objective medical evidence</strong>: imaging showing the fracture or tear, surgical records, physical therapy notes documenting ongoing limitations.</li>
+    <li><strong>Lost wage documentation</strong>: employer letters, pay stubs, and tax returns that pin down what you actually earned before the injury.</li>
+  </ul>
+
+  <h2>Time limits: don&rsquo;t wait</h2>
+  <p>Slip and fall claims have statutes of limitations &mdash; hard deadlines after which you lose the right to file suit permanently. Most states give 2&ndash;3 years from the date of injury for personal injury claims. But several exceptions can shorten or extend that window:</p>
+  <ul>
+    <li><strong>Government property claims</strong> often require a formal notice of claim filed within 60&ndash;180 days of the injury &mdash; before any lawsuit is filed. Missing the government notice deadline typically bars the claim entirely, regardless of the general statute of limitations.</li>
+    <li><strong>Minors.</strong> In most states, the statute of limitations is tolled (paused) until the minor turns 18, giving more time but not unlimited time.</li>
+    <li><strong>Discovery of injury.</strong> If the injury wasn't immediately apparent (uncommon in slip and fall, but possible), some states start the clock from discovery rather than the fall date.</li>
+  </ul>
+  <p>Evidence also degrades quickly. Surveillance footage is often overwritten within 30&ndash;90 days. Witnesses move. The hazard gets repaired. Act promptly to preserve the evidence that makes your case.</p>
+
+  <h2>Learn more</h2>
+  <ul>
+    <li><a href="/guides/how-slip-fall-claims-work">How slip &amp; fall claims work &mdash; step-by-step process guide</a></li>
+    <li><a href="/guides/slip-fall-liability-by-property-type">Slip &amp; fall liability by property type</a></li>
+    <li><a href="/guides/what-to-do-after-slip-fall">What to do immediately after a slip and fall</a></li>
+    <li><a href="/guides/slip-fall-misconceptions">Common misconceptions about slip and fall cases</a></li>
+    <li><a href="/methodology">Calculator methodology and data sources</a></li>
+    <li><a href="/faq">Frequently asked questions</a></li>
+  </ul>
 
   <script>
     document.getElementById('calc').addEventListener('submit', function(e) {
@@ -76,9 +126,9 @@ const description = 'Estimate your slip and fall settlement value. Enter your me
 
       const fmt = n => '$' + n.toLocaleString();
       document.getElementById('result').innerHTML =
-        '<strong>Estimated Settlement Range: ' + fmt(low) + ' – ' + fmt(high) + '</strong>' +
+        '<strong>Estimated Settlement Range: ' + fmt(low) + ' &ndash; ' + fmt(high) + '</strong>' +
         '<br>Economic damages: ' + fmt(econ) +
-        '<br>Pain & suffering multiplier: ' + loMult + '×–' + hiMult + '×' +
+        '<br>Pain &amp; suffering multiplier: ' + loMult + '&times;&ndash;' + hiMult + '&times;' +
         '<br>Liability adjustment: ' + Math.round(adj * 100) + '%' +
         '<br><em>This is an educational estimate. Actual settlements vary significantly based on jurisdiction, insurance limits, and case-specific facts.</em>';
     });
