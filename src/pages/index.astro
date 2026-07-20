@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadCapture from '../components/LeadCapture.astro';
 const title = 'Slip & Fall Settlement Calculator | Estimate Your Premises Liability Case Value';
 const description = 'Estimate your slip and fall settlement value based on medical bills, lost wages, injury severity, and liability strength. Free educational tool with plain-language guides.';
 ---
@@ -44,7 +45,10 @@ const description = 'Estimate your slip and fall settlement value based on medic
   </form>
   <div id="result"></div>
 
-  <h2>How slip &amp; fall settlements are calculated</h2>
+  
+
+  <LeadCapture caseType="slip_fall" caseTypeLabel="Slip and Fall" />
+<h2>How slip &amp; fall settlements are calculated</h2>
   <p>Slip and fall settlements compensate for two categories of loss. <strong>Economic damages</strong> cover out-of-pocket losses that can be documented with bills, pay stubs, and receipts: past medical bills, estimated future medical costs, wages you already lost, and any reduction in future earning capacity. <strong>Non-economic damages</strong> &mdash; most often called pain and suffering &mdash; compensate for physical pain, emotional distress, reduced quality of life, and the lasting impact of your injury on daily activities.</p>
 
   <p>Because pain and suffering can't be quantified with a receipt, insurance adjusters and attorneys typically use the <strong>multiplier method</strong>: take your total economic damages and multiply by a factor that reflects injury severity. Minor injuries that heal fully command lower multipliers; permanent impairments command higher ones.</p>
@@ -90,12 +94,12 @@ const description = 'Estimate your slip and fall settlement value based on medic
 
   <h2>Learn more</h2>
   <ul>
-    <li><a href="/guides/how-slip-fall-claims-work">How slip &amp; fall claims work &mdash; step-by-step process guide</a></li>
-    <li><a href="/guides/slip-fall-liability-by-property-type">Slip &amp; fall liability by property type</a></li>
-    <li><a href="/guides/what-to-do-after-slip-fall">What to do immediately after a slip and fall</a></li>
-    <li><a href="/guides/slip-fall-misconceptions">Common misconceptions about slip and fall cases</a></li>
-    <li><a href="/methodology">Calculator methodology and data sources</a></li>
-    <li><a href="/faq">Frequently asked questions</a></li>
+    <li><a href="/guides/how-slip-fall-claims-work/">How slip &amp; fall claims work &mdash; step-by-step process guide</a></li>
+    <li><a href="/guides/slip-fall-liability-by-property-type/">Slip &amp; fall liability by property type</a></li>
+    <li><a href="/guides/what-to-do-after-slip-fall/">What to do immediately after a slip and fall</a></li>
+    <li><a href="/guides/slip-fall-misconceptions/">Common misconceptions about slip and fall cases</a></li>
+    <li><a href="/methodology/">Calculator methodology and data sources</a></li>
+    <li><a href="/faq/">Frequently asked questions</a></li>
   </ul>
 
   <script>
